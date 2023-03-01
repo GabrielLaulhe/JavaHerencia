@@ -4,76 +4,41 @@
  */
 package Entidades;
 
+import Utilidades.EnumSeccion;
+import Utilidades.EstadoCivil;
+
 /**
  *
  * @author Asus
  */
-public class PersonalServicio extends Empleado {
+public final class PersonalServicio extends Empleado {
     
-    protected String seccion;
+    protected EnumSeccion seccion;
 
     public PersonalServicio() {
     }
 
-    public PersonalServicio(String seccion, Integer anioIncorp, Integer nroDespacho, String nombre, String apellido, Integer ID, String estadoCivil) {
+    public PersonalServicio(EnumSeccion seccion, Integer anioIncorp, Integer nroDespacho, String nombre, String apellido, Integer ID, EstadoCivil estadoCivil) {
         super(anioIncorp, nroDespacho, nombre, apellido, ID, estadoCivil);
         this.seccion = seccion;
     }
 
-    public String getSeccion() {
+    public EnumSeccion getSeccion() {
         return seccion;
     }
 
-    public void setSeccion(String seccion) {
+    public void setSeccion(EnumSeccion seccion) {
         this.seccion = seccion;
     }
 
-    public Integer getAnioIncorp() {
-        return anioIncorp;
-    }
+   
 
-    public void setAnioIncorp(Integer anioIncorp) {
-        this.anioIncorp = anioIncorp;
-    }
-
-    public Integer getNroDespacho() {
-        return nroDespacho;
-    }
-
-    public void setNroDespacho(Integer nroDespacho) {
-        this.nroDespacho = nroDespacho;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public Integer getID() {
-        return ID;
-    }
-
-    public void setID(Integer ID) {
-        this.ID = ID;
-    }
-
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
+   
+    @Override
+    public String toString() {
+        return "PersonalServicio{" + " nombre=" + nombre + ", apellido=" + apellido + 
+                "/n, ID=" + ID + ", estadoCivil=" + estadoCivil+ ", seccion=" + seccion + 
+                "/n, anioIncorp=" + anioIncorp + ", nroDespacho=" + nroDespacho + '}';
     }
     
     

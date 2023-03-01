@@ -4,77 +4,51 @@
  */
 package Entidades;
 
+import Utilidades.EnumDepartamento;
+import Utilidades.EstadoCivil;
+
 /**
  *
  * @author Asus
  */
-public class Profesor extends Empleado {
+public final class Profesor extends Empleado {
+    //    Por lo que se refiere a los profesores, es necesario gestionar a qué departamento
+    //pertenecen (lenguajes, matemáticas, arquitectura, ...).
     
-    protected String materia;
+    protected EnumDepartamento departamento;
+    
 
     public Profesor() {
     }
 
-    public Profesor(String materia, Integer anioIncorp, Integer nroDespacho, String nombre, String apellido, Integer ID, String estadoCivil) {
+    public Profesor(EnumDepartamento departamento, Integer anioIncorp, Integer nroDespacho, String nombre, String apellido, Integer ID, EstadoCivil estadoCivil) {
         super(anioIncorp, nroDespacho, nombre, apellido, ID, estadoCivil);
-        this.materia = materia;
+        this.departamento = departamento;
     }
 
-    public String getMateria() {
-        return materia;
+    public EnumDepartamento getDepartamento() {
+        return departamento;
     }
 
-    public void setMateria(String materia) {
-        this.materia = materia;
+    public void setDepartamento(EnumDepartamento departamento) {
+        this.departamento = departamento;
     }
 
-    public Integer getAnioIncorp() {
-        return anioIncorp;
+    @Override
+    public String toString() {
+        return "Profesor{" + " nombre=" + nombre + ", apellido=" + apellido + ", ID=" + ID + 
+                "/n, estadoCivil=" + estadoCivil + ", departamento=" + departamento
+                + "/n anioIncorp=" + anioIncorp + ", nroDespacho=" + nroDespacho + '}';
     }
 
-    public void setAnioIncorp(Integer anioIncorp) {
-        this.anioIncorp = anioIncorp;
-    }
+    
 
-    public Integer getNroDespacho() {
-        return nroDespacho;
-    }
+    
 
-    public void setNroDespacho(Integer nroDespacho) {
-        this.nroDespacho = nroDespacho;
-    }
+    
+    
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public Integer getID() {
-        return ID;
-    }
-
-    public void setID(Integer ID) {
-        this.ID = ID;
-    }
-
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
-    }
+    
     
     
 }

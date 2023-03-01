@@ -4,61 +4,86 @@
  */
 package Entidades;
 
+import Utilidades.EnumCursos;
+import Utilidades.EstadoCivil;
+import java.util.ArrayList;
+
 /**
  *
  * @author Asus
  */
 public class Estudiante extends Persona {
+    //    En cuanto a los estudiantes, se requiere almacenar el curso en el que están
+    //matriculados.
     
-    protected String curso;
+    protected EnumCursos curso;
 
     public Estudiante() {
     }
 
-    public Estudiante(String curso, String nombre, String apellido, Integer ID, String estadoCivil) {
+    public Estudiante(EnumCursos curso, String nombre, String apellido, Integer ID, EstadoCivil estadoCivil) {
         super(nombre, apellido, ID, estadoCivil);
         this.curso = curso;
     }
 
-    public String getCurso() {
+    public EnumCursos getCurso() {
         return curso;
     }
 
-    public void setCurso(String curso) {
+    public void setCurso(EnumCursos curso) {
         this.curso = curso;
     }
 
+    @Override
     public String getNombre() {
         return nombre;
     }
 
+    @Override
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    @Override
     public String getApellido() {
         return apellido;
     }
 
+    @Override
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
+    @Override
     public Integer getID() {
         return ID;
     }
 
+    @Override
     public void setID(Integer ID) {
         this.ID = ID;
     }
 
-    public String getEstadoCivil() {
+    @Override
+    public EstadoCivil getEstadoCivil() {
         return estadoCivil;
     }
 
-    public void setEstadoCivil(String estadoCivil) {
+    @Override
+    public void setEstadoCivil(EstadoCivil estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + 
+                "/n, ID=" + ID + ", estadoCivil=" + estadoCivil + ", Curso " + curso + '}';
+    }
+    
+    
+
+  
+    
     
     
     

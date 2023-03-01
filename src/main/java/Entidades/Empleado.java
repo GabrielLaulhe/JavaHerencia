@@ -4,19 +4,23 @@
  */
 package Entidades;
 
+import static Herencia.Ejerc4Extra.leer;
+import Utilidades.EstadoCivil;
+
 /**
  *
  * @author Asus
  */
 public class Empleado extends Persona {
-    
+    //    Con respecto a los empleados, sean del tipo que sean, hay que saber su año de
+    //incorporación a la facultad y qué número de despacho tienen asignado.
     protected Integer anioIncorp;
     protected Integer nroDespacho;
 
     public Empleado() {
     }
 
-    public Empleado(Integer anioIncorp, Integer nroDespacho, String nombre, String apellido, Integer ID, String estadoCivil) {
+    public Empleado(Integer anioIncorp, Integer nroDespacho, String nombre, String apellido, Integer ID, EstadoCivil estadoCivil) {
         super(nombre, apellido, ID, estadoCivil);
         this.anioIncorp = anioIncorp;
         this.nroDespacho = nroDespacho;
@@ -38,37 +42,24 @@ public class Empleado extends Persona {
         this.nroDespacho = nroDespacho;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public void cambioNroDespacho() {
+         System.out.println("Ingrese el numero de despacho");
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+        while (!leer.hasNextInt()) {
+            System.out.println("el numero es incorrecto, ingreselo nuevamente");
+            leer.next();  // Limpia la entrada del usuario
+        }
+        
+        int nroD = leer.nextInt(); // Lee el número entero ingresado
+        System.out.println("El número ingresado es: " + nroD);
 
+        nroDespacho=nroD;
+        System.out.println("su nuevo despacho es: " + nroDespacho);
+    }
+    
     @Override
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public Integer getID() {
-        return ID;
-    }
-
-    public void setID(Integer ID) {
-        this.ID = ID;
-    }
-
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
+    public String toString() {
+        return "Empleado{" + "anioIncorp=" + anioIncorp + ", nroDespacho=" + nroDespacho + '}';
     }
 
    

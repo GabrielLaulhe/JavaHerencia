@@ -8,7 +8,7 @@ package Entidades;
  *
  * @author Asus
  */
-public class Residencia extends ExtraHotelero {
+public final class Residencia extends ExtraHotelero {
     
     protected Integer cantidadHabitacionesR;
     protected boolean conDescuento;

@@ -136,6 +136,7 @@ public final class servicioAlojamiento {
         switch (opc) {
             case 1:
                 mostrarAlojamiento(listaAlojam);
+                menu(listaAlojam, listaCamping, listaResidencia);
                 break;
             case 2:
                 Collections.sort(listaAlojam, Comparadores.ordenarPrecio);
@@ -144,6 +145,7 @@ public final class servicioAlojamiento {
                     System.out.println(alojamiento);
                     System.out.println("");
                 }
+                menu(listaAlojam, listaCamping, listaResidencia);
                 break;
             case 3:
                 for (Iterator it = listaCamping.iterator(); it.hasNext();) {
@@ -153,6 +155,7 @@ public final class servicioAlojamiento {
                         System.out.println("");
                     }
                 }
+                menu(listaAlojam, listaCamping, listaResidencia);
                 break;
             case 4:
                 for (Iterator it = listaResidencia.iterator(); it.hasNext();) {
@@ -162,10 +165,13 @@ public final class servicioAlojamiento {
                         System.out.println("");
                     }
                 }
+                menu(listaAlojam, listaCamping, listaResidencia);
                 break;
             
                 
         }
     }
+
+   
 
 }

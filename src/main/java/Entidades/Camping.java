@@ -8,7 +8,7 @@ package Entidades;
  *
  * @author Asus
  */
-public class Camping extends ExtraHotelero {
+public final class Camping extends ExtraHotelero {
     
     
     protected Integer capacidadCarpas;
